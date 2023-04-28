@@ -58,9 +58,9 @@ def lr_tuning(k_shot, epochs):
   view_lr_progression(k_shot, epochs)
 
 def baseline(k_shot, epochs):
-  baseline = BaselineHelper(k_shot=5, criterion=nn.CrossEntropyLoss())
+  baseline = BaselineHelper(k_shot=k_shot, criterion=nn.CrossEntropyLoss())
   # get the CNN output
-  baseline.train(num_epochs=epochs, lr=1e-3)
+  baseline.train_cnn(num_epochs=epochs, lr=1e-3)
 
   # get the KNN output
   baseline.train_knn()

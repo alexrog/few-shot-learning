@@ -36,7 +36,7 @@ class BaselineHelper():
     ci_size = (ci[1] - ci[0]) / 2 
     return sample_mean, ci_size
 
-  def train_CNN(self, num_epochs, lr=1e-3):
+  def train_cnn(self, num_epochs, lr=1e-3):
     ''' Train the CNN baseline network
          - num_epochs (int): number of epochs to train for
          - lr (float): learning rate to use
