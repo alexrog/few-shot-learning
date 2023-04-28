@@ -188,11 +188,11 @@ class MetaLearnerHelper():
       ################################
       val_loss, val_acc = self.valid_meta_learner(is_valid=True, use_pbar=False)
       all_val_loss.append(val_loss)
-      print(f'VALIDATION iter: {idx} loss: {val_loss:6.4f} acc: {val_acc*100:5.2f}%')
+      print(f'VALIDATION iter: {idx} loss: {val_loss:6.4f} acc: {val_acc[0]*100:5.2f}%')
       
       # save best model
-      if val_acc > best_val_acc:
-        best_val_acc = val_acc
+      if val_acc[0] > best_val_acc:
+        best_val_acc = val_acc[0]
         torch.save({
             'model_meta_state_dict': self.model_meta.state_dict(),
             'model_learner_state_dict': self.model_learner.state_dict(),

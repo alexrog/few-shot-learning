@@ -44,7 +44,7 @@ def evaluate(k_shot, model_path):
   valid_loss = best_model_dict['valid_loss']
   num_epoch = best_model_dict['epoch']
 
-  trainer_valid = MetaLearnerHelper(learner_curr, meta_learner_curr, 5)
+  trainer_valid = MetaLearnerHelper(learner_curr, meta_learner_curr, k_shot)
   loss, conf_int = trainer_valid.valid_meta_learner(is_valid=False, use_pbar=True)
   print(f'5 shot best\n  loss: {loss}\n  acc: {conf_int[0]*100:.2f}+/-{conf_int[1]*100:.2f}')
 

@@ -20,12 +20,13 @@ class LogSpaceLR(torch.optim.lr_scheduler._LRScheduler):
        - last_epoch (int): last epoch to do the scheduler
   '''
   def __init__(self, optimizer, start_lr, end_lr, num_steps, last_epoch=-1):
-    super(LogSpaceLR, self).__init__(optimizer, last_epoch)
     self.end_lr = end_lr
     assert start_lr < end_lr
 
     self.lrs = list(np.logspace(np.log10(start_lr),
                     np.log10(end_lr), num_steps))
+
+    super(LogSpaceLR, self).__init__(optimizer, last_epoch)
 
   def get_lr(self):
     ''' Get the learning rate for all the optimizer param groups
