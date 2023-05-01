@@ -14,6 +14,10 @@ class MetaLearnerHelper():
        - model_meta (MetaLearner): the MetaLearner() model
        - k_shot (int): what k shot value to use
        - criterion (nn.loss): which loss function to use
+     NOTE: majority of the code is my own code. I was aided in some areas by an implementation at 
+     https://github.com/markdtw/meta-learning-lstm-pytorch/ to help structure the training functions.
+     There are inherit similarities with this implementation and others since there are only so many
+     ways to do the same thing.
   '''
   def __init__(self, model_learner, model_meta, k_shot, criterion=nn.NLLLoss(reduction='mean')):
     self.model_learner = model_learner.to(device)
