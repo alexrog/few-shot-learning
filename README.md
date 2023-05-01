@@ -16,8 +16,8 @@ python3 main.py --mode=test --kshot=5 --model=models/best_5_shot.pt
 
 There exist two pretrained models in the `models` directory within this repository. These are the two models I trained for this project and represent the ones used to write my paper. To run the evaluation on these models run the following:
 ```bash
-python3 main.py --mode=test --kshot=5 --model=models/best_5_shot_CYCLIC.pt
-python3 main.py --mode=test --kshot=1 --model=models/best_1_shot_CYCLIC.pt
+python3 main.py --mode=test --kshot=5 --model=models/best_model_5_shot_CYCLIC.pt
+python3 main.py --mode=test --kshot=1 --model=models/best_model_1_shot_CYCLIC.pt
 ```
 This script will output the testing accuracy as well as a plot of the loss from the training.
 
